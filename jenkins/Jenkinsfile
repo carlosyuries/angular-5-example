@@ -20,11 +20,6 @@ pipeline{
           $(npm bin)/ng test --single-run --browsers Chrome_no_sandbox
         '''
       }
-      post {
-          always {
-            junit (allowEmptyResults: true, testResults: "**/build/test-reports/*.xml")
-          }
-      }
     }
     stage ('code quality'){
       steps{
