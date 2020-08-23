@@ -28,7 +28,7 @@ pipeline{
       steps{
         sh '''
           rm -rf node_modules
-          oc start-build commerce-app --from-dir=. --follow
+          oc start-build commerce --from-dir=. --follow
         '''
       }
     }
