@@ -27,7 +27,9 @@ pipeline{
     stage ('build image') {
       steps{
         sh '''
+          pwd
           rm -rf node_modules
+          pwd
           oc start-build commerce --from-dir=. --follow
         '''
       }
