@@ -1,5 +1,5 @@
 pipeline{
-  agent { label 'nodejs8' }
+  agent { label 'nodejs' }
   stages{
     stage ('checkout'){
       steps{
@@ -28,7 +28,7 @@ pipeline{
       steps{
         sh '''
           rm -rf node_modules
-          oc start-build angular-5-example --from-dir=. --follow
+          oc start-build commerce --from-dir=. --follow
         '''
       }
     }
