@@ -1,5 +1,7 @@
 pipeline{
-  agent { label 'nodejs8' }
+  agent {
+        docker { image "node:10.19.0-alpine" }
+  }
   stages{
     stage ('checkout'){
       steps{
